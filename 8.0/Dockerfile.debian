@@ -84,6 +84,8 @@ RUN { \
 # ensure that /var/run/mysqld (used for socket and lock files) is writable regardless of the UID our mysqld instance ends up having at runtime
 	&& chmod 1777 /var/run/mysqld /var/lib/mysql
 
+## DEFAULT LOCALTION FOR MYSQL DATABSE AND IMAGE IS PROGRAMMED TO TELL DOCKER WHEN WE START NEW CONTAINER FROM IT CREATE NEW VOLUMENT LOCATIONS AND ASSIGN IT TO THIS
+# DIRECTORY IN THE CONTAONER #FILES CANNOT BE DELETED AUTOMATICLY WHEN WE PUT IN CONTAINER | WE HAVE TO MANULLY DELETE VOLUMEE 
 VOLUME /var/lib/mysql
 
 # Config files
